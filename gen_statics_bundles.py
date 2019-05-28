@@ -40,8 +40,6 @@ for SHARE, MG_FILTER_TAGS in itertools.product(range(2), repeat=2):
         bundle.write(cat('static/jslibs/uikit-3.1.5.min.js'))
         bundle.write(cat('static/jslibs/uikit-icons-3.1.5.min.js'))
         bundle.write(cat('static/jslibs/lazysizes-5.0.0.min.js'))
-        bundle.write(cat('static/jslibs/tipuesearch.js'))
-        bundle.write(cat('static/jslibs/tipuesearch_set.js'))
         if SHARE:
             bundle.write(cat('static/jslibs/jquery.sticky-kit-1.1.2.min.js'))
             bundle.write(cat('static/js/social.js'))
