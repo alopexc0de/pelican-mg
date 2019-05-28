@@ -40,16 +40,16 @@
 {% endblock %}
 
 {% block content %}
-<div class="mg-container-social uk-width-1-10@m uk-hidden-small">
+<div class="mg-container-social uk-width-1-10@m ">
 
     {% if SHARE %}
     <div class="uk-panel" id="mg-panel-social">
-        <ul class="uk-nav uk-nav-side">
+        <ul class="uk-nav uk-nav-default">
             <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" class="uk-button"><i class="fab fa-facebook-square"></i> Share</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" class="uk-button uk-button-default"><i class="fab fa-facebook-square"></i> Share</a>
             </li>
             <li>
-            <a href="https://twitter.com/intent/tweet?text={{ article.title|striptags|urlencode }}&url={{ SITEURL }}/{{ article.url }}&via={{ TWITTER_USERNAME }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="uk-button" target="_blank"><i class="fab fa-twitter-square"></i> Tweet</a>
+            <a href="https://twitter.com/intent/tweet?text={{ article.title|striptags|urlencode }}&url={{ SITEURL }}/{{ article.url }}&via={{ TWITTER_USERNAME }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="uk-button uk-button-default" target="_blank"><i class="fab fa-twitter-square"></i> Tweet</a>
             </li>
         </ul>
     </div>
@@ -60,16 +60,16 @@
 <div class="uk-width-7-10@m">
 
     <article class="uk-article">
-        <h1 class="uk-heading-large uk-article-title" itemprop="name">{{ article.title }}</h1>
+        <h1 class="uk-heading-primary uk-article-title" itemprop="name">{{ article.title }}</h1>
         <p class="uk-article-meta">
             <time datetime="{{ article.date.strftime('%Y-%m-%d') }}" itemprop="datePublished">{{ article.locale_date }}</time>
             {% if CATEGORY_SAVE_AS %}<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>{% endif %}
-            {% if DISQUS_SITENAME %}, <br class="uk-visible-small"><i class="fas fa-comments"></i> <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread" itemprop="discussionUrl"></a>{% endif %}
+            {% if DISQUS_SITENAME %}, <br class="uk-visible@s"><i class="fas fa-comments"></i> <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread" itemprop="discussionUrl"></a>{% endif %}
         </p>
 
         {% if SHARE %}
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" class="uk-button uk-visible-small"><i class="fab fa-facebook-square"></i> Share</a>
-        <a href="https://twitter.com/intent/tweet?text={{ article.title|striptags|urlencode }}&url={{ SITEURL }}/{{ article.url }}&via={{ TWITTER_USERNAME }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="uk-button uk-visible-small" target="_blank"><i class="fab fa-twitter-square"></i> Tweet</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" class="uk-button uk-button-default uk-visible@s"><i class="fab fa-facebook-square"></i> Share</a>
+        <a href="https://twitter.com/intent/tweet?text={{ article.title|striptags|urlencode }}&url={{ SITEURL }}/{{ article.url }}&via={{ TWITTER_USERNAME }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="uk-button uk-button-default uk-visible@s" target="_blank"><i class="fab fa-twitter-square"></i> Tweet</a>
         {% endif %}
 
         {% if not MG_DISABLE_SUMMARY %}<p class="uk-text-lead" itemprop="description">{{ article.summary|striptags }}</p>{% endif %}
