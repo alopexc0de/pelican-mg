@@ -23,8 +23,11 @@
 
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
     <meta name="description" content="{% block description %}{{ DESCRIPTION }}{% endblock %}">
-    {% if FAVICON %}<link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}" type="{{ FAVICON_TYPE|default('image/x-icon') }}">{% endif %}
+    {% if FAVICON %}
+    <link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}" type="{{ FAVICON_TYPE|default('image/x-icon') }}">
+    {% endif %}
     <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed">
+
     {% block meta %}
     {% endblock %}
 
@@ -55,11 +58,10 @@
     {% endblock %}
 
     {% if not DISABLE_SEARCH %}
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/uikit/2.23.0/css/components/search.min.css">
     <link rel="stylesheet" href="{{ SITEURL }}/theme/csslibs/tipuesearch.css">
     {% endif %}
 
-    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-1f5d92e.css">
+    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-dbda62d.css">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-xVVam1KS4+Qt2OrFa+VdRUoXygyKIuNWUUUBZYv+n27STsJ7oDOHJgfF0bNKLMJF" crossorigin="anonymous">
 </head>
@@ -153,8 +155,8 @@
 
             <div class="uk-panel uk-panel-box">
                 <h3 class="uk-panel-title">Syndication</h3>
-                <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> ATOM</a>
-                {% if EXTRA_ATOM_FEED %}<a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> {{ EXTRA_ATOM_FEED['name'] }}</a>{% endif %}
+                <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="fas fa-rss-square uk-icon-medium"></i> ATOM</a>
+                {% if EXTRA_ATOM_FEED %}<a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="fas fa-rss-square uk-icon-medium"></i> {{ EXTRA_ATOM_FEED['name'] }}</a>{% endif %}
             </div>
 
             {% if AVATARS %}
@@ -282,11 +284,10 @@
 </aside>
 
 {% if not DISABLE_SEARCH %}
-<script src="//cdnjs.cloudflare.com/ajax/libs/uikit/2.23.0/js/components/search.min.js"></script>
 <script src="{{ SITEURL }}/theme/js/tipuesearch_set.js"></script>
 <script src="{{ SITEURL }}/theme/js/tipuesearch.js"></script>
 {% endif %}
 
-<script src="{{SITEURL}}/theme/bundle-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-12d0265.js"></script>
+<script src="{{SITEURL}}/theme/bundle-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-d853ca5.js"></script>
 </body>
 </html>
