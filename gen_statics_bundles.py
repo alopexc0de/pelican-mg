@@ -40,7 +40,7 @@ for SHARE, MG_FILTER_TAGS in itertools.product(range(2), repeat=2):
         bundle.write(cat('static/jslibs/lazysizes-4.0.0-rc3.min.js'))
         bundle.write(cat('static/jslibs/lazysizes-4.0.0-rc3.noscript.min.js'))
         bundle.write(cat('static/jslibs/tipuesearch.js'))
-        bundle.write(cat('string/jslibs/tipuesearch_set.js'))
+        bundle.write(cat('static/jslibs/tipuesearch_set.js'))
         if SHARE:
             bundle.write(cat('static/jslibs/jquery.sticky-kit.js'))
             bundle.write(cat('static/js/social.js'))
