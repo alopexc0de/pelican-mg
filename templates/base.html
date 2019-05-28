@@ -232,7 +232,11 @@
     <div class="uk-offcanvas-bar">
 
         {% if not DISABLE_SEARCH %}
-        <iframe src="https://duckduckgo.com/search.html?site={{ SITEURL }}&prefill=Search" class="duckduckgo"></iframe>
+        <div class="uk-panel uk-panel-box">
+            <form class="uk-search" action="search.html" data-uk-search>
+                <input class="uk-search-field tipue_search" type="search" name="q" id="tipue_search_input" autocomplete="off" placeholder="Search...">
+            </form>
+        </div>
         {% endif %}
 
         <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
@@ -284,8 +288,5 @@
 {% endif %}
 
 <script src="{{SITEURL}}/theme/bundle-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-12d0265.js"></script>
-
-{% include 'disqus_count.html' %}
-{% include 'analytics.html' %}
 </body>
 </html>
