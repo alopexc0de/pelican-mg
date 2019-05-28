@@ -23,6 +23,7 @@ files_created = not os.path.exists(css_bundle_filepath)
 with open(css_bundle_filepath, 'wb') as bundle:
     bundle.write(cat('static/csslibs/uikit-2.27.4.min.css'))
     bundle.write(cat('static/csslibs/solarized-highlight.css'))
+    bundle.write(cat('static/csslibs/tipuesearch.css'))
     bundle.write(cat('static/main.css'))
 
 print('Generating JS bundle')
@@ -38,6 +39,8 @@ for SHARE, MG_FILTER_TAGS in itertools.product(range(2), repeat=2):
         bundle.write(cat('static/jslibs/uikit-2.27.4.min.js'))
         bundle.write(cat('static/jslibs/lazysizes-4.0.0-rc3.min.js'))
         bundle.write(cat('static/jslibs/lazysizes-4.0.0-rc3.noscript.min.js'))
+        bundle.write(cat('static/jslibs/tipuesearch.js'))
+        bundle.write(cat('string/jslibs/tipuesearch_set.js'))
         if SHARE:
             bundle.write(cat('static/jslibs/jquery.sticky-kit.js'))
             bundle.write(cat('static/js/social.js'))
