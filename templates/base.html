@@ -223,59 +223,6 @@
     </div>
 </footer>
 
-<aside id="mg-offcanvas" uk-offcanvas>
-    <div class="uk-offcanvas-bar">
-
-        {% if not DISABLE_SEARCH %}
-        <div class="uk-card uk-card-default">
-            <form class="uk-search uk-search-default" action="search.html" >
-                <i class="fal fa-search uk-search-icon "></i><input class="uk-search-input tipue_search" type="search" name="q" id="tipue_search_input" autocomplete="off" placeholder="Search...">
-            </form>
-        </div>
-        {% endif %}
-
-        <ul class="uk-nav uk-nav-default" uk-nav>
-            {% if CATEGORY_SAVE_AS %}
-            <li class="uk-nav-header">Categories</li>
-            {% for cat, _ in categories %}
-            <li {% if cat == category %}class="uk-active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-            {% endfor %}
-            {% endif %}
-
-            {% if DISPLAY_PAGES_ON_MENU != False %}
-            <li class="uk-nav-header">Pages</li>
-            {% for p in pages %}
-            <li {% if p == page %}class="uk-active"{% endif %}>
-                <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
-            </li>
-            {% endfor %}
-            {% endif %}
-
-            {% if ARCHIVE_SAVE_AS %}
-            <li class="uk-nav-divider"></li>
-            <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a></li>
-            {% endif %}
-
-            {% if LINKS %}
-            <li class="uk-nav-divider"></li>
-            <li class="uk-nav-header">Blogroll</li>
-            {% for text, url in LINKS %}
-            <li><a href="{{ url }}">{{ text }}</a></li>
-            {% endfor %}
-            {% endif %}
-
-            {% if SUPPORTS %}
-            <li class="uk-nav-divider"></li>
-            {% for name, link, logo_url, title in SUPPORTS %}
-            <li><a href="{{ link }}">
-                <img class="mg-support-logo" src="{{ logo_url }}" alt="Logo {{ name }}" title="{{ title }}">
-            </a></li>
-            {% endfor %}
-            {% endif %}
-        </ul>
-    </div>
-</aside>
-
 <script src="{{SITEURL}}/theme/bundle-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-d853ca5.js"></script>
 
 {% if not DISABLE_SEARCH %}
