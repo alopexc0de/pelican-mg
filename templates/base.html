@@ -70,29 +70,24 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<header class="mg-header uk-navbar ">
+<header class="mg-header">
 
-    <div class="mg-header-content uk-container uk-navbar-center">
+    <div class="mg-header-content uk-container">
 
-        <div class="uk-hidden@s">
+        <div>
             <a class="mg-brand" href="{{ SITEURL }}">{% block header_text %}{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}</a>
             <div class="mg-tagline">{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</div>
         </div>
 
-        <ul class="uk-hidden@s mg-skiplinks">
+        <ul class="mg-skiplinks">
             {% if not DISABLE_SEARCH %}
             <li><a href="#search-form">Search form</a></li>
             {% endif %}
         </ul>
 
-        <div class="mg-header-extra uk-hidden@s">
+        <div class="mg-header-extra">
             {% block header_extra %}
             {% endblock %}
-        </div>
-
-        <div class="mg-nav-small uk-visible@s">
-            <a class="mg-nav-menu-toggle-small uk-navbar-toggle" href="#mg-offcanvas" uk-toggle></a>
-            <a class="mg-brand uk-navbar-center" href="{{ SITEURL }}">{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}</a>
         </div>
 
     </div>
@@ -107,7 +102,7 @@
         {% block content %}
         {% endblock %}
 
-        <div role="navigation" class="uk-width-1-5@m uk-hidden@s">
+        <div role="navigation" class="uk-width-1-5@m">
 
             {% if not DISABLE_SEARCH %}
             <div class="uk-card uk-card-default">
