@@ -70,28 +70,28 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<header class="mg-header uk-navbar uk-navbar-attached">
+<header class="mg-header uk-navbar ">
 
-    <div class="mg-header-content uk-container uk-container-center">
+    <div class="mg-header-content uk-container ">
 
-        <div class="uk-hidden-small">
+        <div class="uk-hidden@s">
             <a class="mg-brand" href="{{ SITEURL }}">{% block header_text %}{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}</a>
             <div class="mg-tagline">{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</div>
         </div>
 
-        <ul class="uk-hidden-small mg-skiplinks">
+        <ul class="uk-hidden@s mg-skiplinks">
             {% if not DISABLE_SEARCH %}
             <li><a href="#search-form">Search form</a></li>
             {% endif %}
         </ul>
 
-        <div class="mg-header-extra uk-hidden-small">
+        <div class="mg-header-extra uk-hidden@s">
             {% block header_extra %}
             {% endblock %}
         </div>
 
-        <div class="mg-nav-small uk-visible-small">
-            <a class="mg-nav-menu-toggle-small uk-navbar-toggle" href="#mg-offcanvas" data-uk-offcanvas></a>
+        <div class="mg-nav-small uk-visible@s">
+            <a class="mg-nav-menu-toggle-small uk-navbar-toggle" href="#mg-offcanvas" uk-toggle></a>
             <a class="mg-brand uk-navbar-center" href="{{ SITEURL }}">{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}</a>
         </div>
 
@@ -100,25 +100,25 @@
 
 <main class="mg-main">
 
-<div class="uk-container uk-container-center">
+<div class="uk-container ">
 
-    <div class="uk-grid" data-uk-grid-margin>
+    <div class="uk-grid" uk-grid>
 
         {% block content %}
         {% endblock %}
 
-        <div role="navigation" class="uk-width-medium-1-5 uk-hidden-small">
+        <div role="navigation" class="uk-width-1-5@m uk-hidden@s">
 
             {% if not DISABLE_SEARCH %}
-            <div class="uk-panel uk-panel-box">
-                <form class="uk-search" action="search.html" data-uk-search>
-                    <input class="uk-search-field tipue_search" type="search" name="q" id="tipue_search_input" autocomplete="off" placeholder="Search...">
+            <div class="uk-card uk-card-default">
+                <form class="uk-search uk-search-default" action="search.html" >
+                    <input class="uk-search-input tipue_search" type="search" name="q" id="tipue_search_input" autocomplete="off" placeholder="Search...">
                 </form>
             </div>
             {% endif %}
 
-            <div class="uk-panel uk-panel-box">
-                <ul class="uk-nav uk-nav-side">
+            <div class="uk-card uk-card-default">
+                <ul class="uk-nav uk-nav-default">
                     {% if CATEGORY_SAVE_AS %}
                     <li class="uk-nav-header">Categories</li>
                     {% for cat, _ in categories %}
@@ -143,25 +143,25 @@
             </div>
 
             {% if SOCIAL %}
-            <div class="uk-panel uk-panel-box">
-                <h2 class="uk-panel-title">Social</h2>
+            <div class="uk-card uk-card-default">
+                <h2 class="uk-card-title">Social</h2>
                 {% for link_destination, link in SOCIAL %}
                 <a class="mg-icon-link" href="{{ link }}" title="Link to my {{ link_destination }}">
-                    <i class="fab fa-{{ link_destination }} uk-icon-medium" aria-hidden="true"></i>
+                    <i class="fab fa-{{ link_destination }} " aria-hidden="true"></i>
                 </a>
                 {% endfor %}
             </div>
             {% endif %}
 
-            <div class="uk-panel uk-panel-box">
-                <h3 class="uk-panel-title">Syndication</h3>
-                <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="fas fa-rss-square uk-icon-medium"></i> ATOM</a>
-                {% if EXTRA_ATOM_FEED %}<a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="fas fa-rss-square uk-icon-medium"></i> {{ EXTRA_ATOM_FEED['name'] }}</a>{% endif %}
+            <div class="uk-card uk-card-default">
+                <h3 class="uk-card-title">Syndication</h3>
+                <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="fas fa-rss-square "></i> ATOM</a>
+                {% if EXTRA_ATOM_FEED %}<a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="fas fa-rss-square "></i> {{ EXTRA_ATOM_FEED['name'] }}</a>{% endif %}
             </div>
 
             {% if AVATARS %}
-            <div class="uk-panel uk-panel-box">
-                <h2 class="uk-panel-title">Avatars</h2>
+            <div class="uk-card uk-card-default">
+                <h2 class="uk-card-title">Avatars</h2>
                 {% for img_uri in AVATARS %}
                 <img class="mg-avatar" src="{{ img_uri }}" alt="An avatar I use on the web" title="An avatar I use on the web">
                 {% endfor %}
@@ -170,17 +170,17 @@
 
             {% if READINGS %}
             <a href="{{ SITEURL }}/past_readings.html">
-                <div class="uk-panel uk-panel-box">
-                    <h2 class="uk-panel-title">Previous Entries</h2>
+                <div class="uk-card uk-card-default">
+                    <h2 class="uk-card-title">Previous Entries</h2>
                     <img class="uk-thumbnail" src="{{ READINGS[0]['img_url'] }}" alt="{{ READINGS[0]['description'] }}" title="{{ READINGS[0]['description'] }}">
                 </div>
             </a>
             {% endif %}
 
             {% if LINKS %}
-            <div class="uk-panel uk-panel-box">
-                <h3 class="uk-panel-title">Blogroll</h3>
-                <ul class="uk-nav uk-nav-side">
+            <div class="uk-card uk-card-default">
+                <h3 class="uk-card-title">Blogroll</h3>
+                <ul class="uk-nav uk-nav-default">
                 {% for text, url in LINKS %}
                 <li><a href="{{ url }}">{{ text }}</a></li>
                 {% endfor %}
@@ -189,7 +189,7 @@
             {% endif %}
 
             {% if SUPPORTS %}
-            <div class="uk-panel uk-panel-box">
+            <div class="uk-card uk-card-default">
                 {% for name, link, logo_url, title in SUPPORTS %}
                 <a href="{{ link }}">
                     <img class="mg-support-logo" src="{{ logo_url }}" alt="Logo {{ name }}" title="{{ title }}">
@@ -207,16 +207,16 @@
 </main>
 
 <footer class="mg-footer">
-    <div class="uk-container uk-container-center uk-text-center">
+    <div class="uk-container  uk-text-center">
 
-        <ul class="mg-icons-small uk-subnav uk-visible-small">
+        <ul class="mg-icons-small uk-subnav uk-visible@s">
             <li><a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="uk-icon-button uk-icon-rss"></a></li>
             {% if EXTRA_ATOM_FEED %}<li><a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="uk-icon-button uk-icon-rss"></a></li>{% endif %}
             {% if SOCIAL %}
             {% for link_destination, link in SOCIAL %}
             <li>
                 <a class="mg-icon-link" href="{{ link }}" title="Link to my {{ link_destination }}">
-                    <i class="uk-icon-{{ link_destination }} uk-icon-medium" aria-hidden="true"></i>
+                    <i class="uk-icon-{{ link_destination }} " aria-hidden="true"></i>
                 </a>
             </li>
             {% endfor %}
@@ -230,18 +230,18 @@
     </div>
 </footer>
 
-<aside id="mg-offcanvas" class="uk-offcanvas">
+<aside id="mg-offcanvas" uk-offcanvas>
     <div class="uk-offcanvas-bar">
 
         {% if not DISABLE_SEARCH %}
-        <div class="uk-panel uk-panel-box">
-            <form class="uk-search" action="search.html" data-uk-search>
-                <input class="uk-search-field tipue_search" type="search" name="q" id="tipue_search_input" autocomplete="off" placeholder="Search...">
+        <div class="uk-card uk-card-default">
+            <form class="uk-search uk-search-default" action="search.html" >
+                <i class="fal fa-search uk-search-icon "></i><input class="uk-search-input tipue_search" type="search" name="q" id="tipue_search_input" autocomplete="off" placeholder="Search...">
             </form>
         </div>
         {% endif %}
 
-        <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+        <ul class="uk-nav uk-nav-default" uk-nav>
             {% if CATEGORY_SAVE_AS %}
             <li class="uk-nav-header">Categories</li>
             {% for cat, _ in categories %}
