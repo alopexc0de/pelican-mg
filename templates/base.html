@@ -202,23 +202,10 @@
 </main>
 
 <footer class="mg-footer">
-    <div class="uk-container  uk-text-center">
-
-        <ul class="mg-icons-small uk-subnav uk-visible@s">
-            <li><a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}"><i class="fas fa-rss-square"></i></a></li>
-            {% if EXTRA_ATOM_FEED %}<li><a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}"><i class="fas fa-rss-square"></i></a></li>{% endif %}
-            {% if SOCIAL %}
-            {% for link_destination, link in SOCIAL %}
-                <a class="mg-icon-link" href="{{ link }}" title="Link to my {{ link_destination }}">
-                    <i class="fab fa-{{ link_destination }} " aria-hidden="true"></i>
-                </a>
-            {% endfor %}
-            {% endif %}
-        </ul>
-
+    <div class="uk-container uk-text-center">
         <div class="mg-author uk-panel">
-            <p>{{ FOOTER }}</p>
             <p>Powered by <a href="http://blog.getpelican.com">Pelican</a>. Theme <a href="https://github.com/alopexc0de/pelican-mg">mg</a> based on work by <a href="https://github.com/lucachr">Luca Chiricozzi</a></p>
+            <p>{{ FOOTER }}</p>
         </div>
     </div>
 </footer>
