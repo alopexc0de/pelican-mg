@@ -2,12 +2,12 @@
     <a href="{{ SITEURL }}/{{ article.url }}" class="uk-link-muted"><h2 class="uk-article-title" itemprop="name">{{ article.title|e }}</h2></a>
     <p class="uk-article-meta"><time datetime="{{ article.date.strftime('%Y-%m-%d') }}" itemprop="datePublished">{{ article.locale_date }}</time>
         {% if CATEGORY_SAVE_AS %} • <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>{% endif %}
-        {% if DISQUS_SITENAME %} • <br class="uk-visible-small"><i class="uk-icon-comment"></i> <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread" itemprop="discussionUrl"></a>{% endif %}
+        {% if DISQUS_SITENAME %} • <br class="uk-visible-small"><i class="fas fa-comments"></i></i> <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread" itemprop="discussionUrl"></a>{% endif %}
     </p>
-    {% if not MG_DISABLE_SUMMARY %}<p class="uk-article-lead" itemprop="description">{{ article.summary|striptags|striptags }}</p>{% endif %}
+    {% if not MG_DISABLE_SUMMARY %}<p class="uk-text-lead" itemprop="description">{{ article.summary|striptags|striptags }}</p>{% endif %}
     <section class="uk-article-content" itemprop="articleBody">{{ article.content }}</section>
     {% include "partials/inline-tags.html" %}
     <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a>
-    <hr class="uk-article-divider">
+    <hr class="uk-divider-icon">
 </article>
 

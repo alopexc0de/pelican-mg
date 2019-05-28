@@ -72,7 +72,7 @@
 
 <header class="mg-header uk-navbar ">
 
-    <div class="mg-header-content uk-container ">
+    <div class="mg-header-content uk-container uk-navbar-center">
 
         <div class="uk-hidden@s">
             <a class="mg-brand" href="{{ SITEURL }}">{% block header_text %}{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}</a>
@@ -214,11 +214,9 @@
             {% if EXTRA_ATOM_FEED %}<li><a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="uk-icon-button uk-icon-rss"></a></li>{% endif %}
             {% if SOCIAL %}
             {% for link_destination, link in SOCIAL %}
-            <li>
                 <a class="mg-icon-link" href="{{ link }}" title="Link to my {{ link_destination }}">
-                    <i class="uk-icon-{{ link_destination }} " aria-hidden="true"></i>
+                    <i class="fab fa-{{ link_destination }} " aria-hidden="true"></i>
                 </a>
-            </li>
             {% endfor %}
             {% endif %}
         </ul>
