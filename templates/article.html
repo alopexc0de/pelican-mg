@@ -40,8 +40,7 @@
 {% endblock %}
 
 {% block content %}
-
-<div class="uk-width-7-10@m">
+<div class="uk-width-1-5@m">
 
     <article class="uk-article">
         <h1 class="uk-heading-primary uk-article-title" itemprop="name">{{ article.title }}</h1>
@@ -77,11 +76,6 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    {% endif %}
-
-    {% if ISSO_BASE_URL %}
-    <script data-isso="{{ ISSO_BASE_URL }}/" src="{{ ISSO_BASE_URL }}/js/embed.dev.js"></script>
-    <section id="isso-thread"></section>
     {% endif %}
 
 </div>

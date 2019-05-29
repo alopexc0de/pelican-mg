@@ -6,11 +6,11 @@
 <div class="uk-width-4-5@m">
     <h1 class="uk-heading-primary">Categories</h1>
     {% for category, articles in categories %}
-    <h2><a href="{{ SITEURL}}/{{ category.url}}" class="uk-link-muted">{{ category|capitalize }}</a></h2>
+    <h2><a href="{{ SITEURL}}/{{ category.url}}" class="uk-link-muted mg-list-title">{{ category|capitalize }}</a></h2>
         {% for article in articles %}
 
         <article class="uk-article">
-            <a href="{{ SITEURL }}/{{ article.url }}" class="uk-article-title uk-link-muted mg-list-title">{{ article.title }}</a>
+            <a href="{{ SITEURL }}/{{ article.url }}" class="uk-article-title uk-link-muted">{{ article.title }}</a>
             <p class="uk-article-meta">
                 <time datetime="{{ article.date.strftime('%Y-%m-%d') }}">{{ article.locale_date }}</time>
             </p>
