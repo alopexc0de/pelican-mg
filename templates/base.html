@@ -105,30 +105,20 @@
         <div role="navigation" class="uk-width-1-5@m">
 
             {% if not DISABLE_SEARCH %}
-            <div class="uk-card uk-card-body">
+            <div class="uk-card uk-card-body uk-card-small">
                 <form class="uk-search uk-search-default" action="search.html" >
                     <input class="uk-search-input tipue_search" type="search" name="q" id="tipue_search_input" autocomplete="off" placeholder="Search...">
                 </form>
             </div>
             {% endif %}
 
-            <div class="uk-card uk-card-body">
+            {% if CATEGORY_SAVE_AS %}
+            <div class="uk-card uk-card-body uk-card-small">
+                <h2 class="uk-card-title">Categories</h2>
                 <ul class="uk-nav uk-nav-default">
-                    {% if CATEGORY_SAVE_AS %}
-                    <li class="uk-nav-header">Categories</li>
                     {% for cat, _ in categories %}
                     <li {% if cat == category %}class="uk-active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
                     {% endfor %}
-                    {% endif %}
-
-                    {% if DISPLAY_PAGES_ON_MENU != False %}
-                    <li class="uk-nav-header">Pages</li>
-                    {% for p in pages %}
-                    <li {% if p == page %}class="uk-active"{% endif %}>
-                        <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
-                    </li>
-                    {% endfor %}
-                    {% endif %}
 
                     {% if ARCHIVE_SAVE_AS %}
                     <li class="uk-nav-divider"></li>
@@ -136,9 +126,23 @@
                     {% endif %}
                 </ul>
             </div>
+            {% endif %}
+
+            {% if DISPLAY_PAGES_ON_MENU != False %}
+            <div class="uk-card uk-card-body uk-card-small">
+                <h2 class="uk-card-title">Pages</h2>
+                <ul class="uk-nav uk-nav-default">
+                    {% for p in pages %}
+                    <li {% if p == page %}class="uk-active"{% endif %}>
+                        <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
 
             {% if SOCIAL %}
-            <div class="uk-card uk-card-body">
+            <div class="uk-card uk-card-body uk-card-small">
                 <h2 class="uk-card-title">Social</h2>
                 {% for link_destination, link in SOCIAL %}
                 <a class="mg-icon-link" href="{{ link }}" title="Link to my {{ link_destination }}">
@@ -148,14 +152,14 @@
             </div>
             {% endif %}
 
-            <div class="uk-card uk-card-body">
-                <h3 class="uk-card-title">Syndication</h3>
+            <div class="uk-card uk-card-body uk-card-small">
+                <h2 class="uk-card-title">Syndication</h2>
                 <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="fas fa-rss-square "></i> ATOM</a>
                 {% if EXTRA_ATOM_FEED %}<a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="fas fa-rss-square "></i> {{ EXTRA_ATOM_FEED['name'] }}</a>{% endif %}
             </div>
 
             {% if AVATARS %}
-            <div class="uk-card uk-card-body">
+            <div class="uk-card uk-card-body uk-card-small">
                 <h2 class="uk-card-title">Avatars</h2>
                 {% for img_uri in AVATARS %}
                 <img class="mg-avatar" src="{{ img_uri }}" alt="An avatar I use on the web" title="An avatar I use on the web">
@@ -165,7 +169,7 @@
 
             {% if READINGS %}
             <a href="{{ SITEURL }}/past_readings.html">
-                <div class="uk-card uk-card-body">
+                <div class="uk-card uk-card-body uk-card-small">
                     <h2 class="uk-card-title">Previous Entries</h2>
                     <img class="uk-thumbnail" src="{{ READINGS[0]['img_url'] }}" alt="{{ READINGS[0]['description'] }}" title="{{ READINGS[0]['description'] }}">
                 </div>
@@ -173,7 +177,7 @@
             {% endif %}
 
             {% if LINKS %}
-            <div class="uk-card uk-card-body">
+            <div class="uk-card uk-card-body uk-card-small">
                 <h3 class="uk-card-title">Blogroll</h3>
                 <ul class="uk-nav uk-nav-default">
                 {% for text, url in LINKS %}
@@ -184,7 +188,7 @@
             {% endif %}
 
             {% if SUPPORTS %}
-            <div class="uk-card uk-card-body">
+            <div class="uk-card uk-card-body uk-card-small">
                 {% for name, link, logo_url, title in SUPPORTS %}
                 <a href="{{ link }}">
                     <img class="mg-support-logo" src="{{ logo_url }}" alt="Logo {{ name }}" title="{{ title }}">
