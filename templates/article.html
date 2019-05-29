@@ -40,22 +40,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="mg-container-social uk-width-1-10@m ">
-
-    {% if SHARE %}
-    <div class="uk-panel" id="mg-panel-social">
-        <ul class="uk-nav uk-nav-default">
-            <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" class="uk-button uk-button-default"><i class="fab fa-facebook-square"></i> Share</a>
-            </li>
-            <li>
-            <a href="https://twitter.com/intent/tweet?text={{ article.title|striptags|urlencode }}&url={{ SITEURL }}/{{ article.url }}&via={{ TWITTER_USERNAME }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="uk-button uk-button-default" target="_blank"><i class="fab fa-twitter-square"></i> Tweet</a>
-            </li>
-        </ul>
-    </div>
-    {% endif %}
-
-</div>
 
 <div class="uk-width-7-10@m">
 
