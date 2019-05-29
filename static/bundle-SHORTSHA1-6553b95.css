@@ -375,7 +375,9 @@ article figcaption {
   font-style: italic; }
 
 .mg-feed {
-  color: #bf4d00; }
+  color: #bf4d00; 
+  font-size: 16pt;
+}
   .mg-feed:hover {
     color: #d14905; }
 
@@ -462,6 +464,10 @@ article figcaption {
   color: #000;
   padding: 0.2em 0; }
 
+
+.social-link {
+  font-size: 20pt;
+}
 
 .mg-search {
   display: flex; }

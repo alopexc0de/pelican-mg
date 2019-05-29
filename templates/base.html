@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="{{ SITEURL }}/theme/csslibs/tipuesearch.css">
     {% endif %}
 
-    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-dbda62d.css">
+    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-6553b95.css">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-xVVam1KS4+Qt2OrFa+VdRUoXygyKIuNWUUUBZYv+n27STsJ7oDOHJgfF0bNKLMJF" crossorigin="anonymous">
 </head>
@@ -146,7 +146,7 @@
                 <h2 class="uk-card-title">Social</h2>
                 {% for link_destination, link in SOCIAL %}
                 <a class="mg-icon-link" href="{{ link }}" title="Link to my {{ link_destination }}">
-                    <i class="fab fa-{{ link_destination }} " aria-hidden="true"></i>
+                    <i class="fab fa-{{ link_destination }} social-link" aria-hidden="true"></i>
                 </a>
                 {% endfor %}
             </div>
